@@ -7,9 +7,13 @@ include templates/navbar
       img.d-inline-block.align-top.w-100(src='/images/logo.png' alt='logo')
     .col-4.p-3.mb-5.bg-danger.rounded
       h1.text-white.text-center Accede a tu cuenta
-      form(action='/presupuesto' method='post')
+
+      if error
+        .alert.alert-danger
+          span Credenciales incorrectas
+      form(action='/clientes/login' method='post')
         .form-group
-          label.text-light(for='nif') NIF
+          label.text-light(for='nif') NIF #{error}
           input#potencia.form-control(type='text' name='nif')
         .form-group
           label.text-light(for='pass') Password
