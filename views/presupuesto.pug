@@ -1,0 +1,25 @@
+include templates/header
+include templates/navbar
+
+.container.mt-5.mb-5
+  .row
+    .col-1
+    .col-10
+        h2 Presupuesto
+        hr
+        .row.text-center
+            .col-4
+                h4#header Seguro a terceros
+                br
+                h2#val #{val} €
+            .col-4
+                h4#header Seguro a todo riesgo
+                h6 (franquicia 200€)
+                h2#val #{val+200} €
+            .col-4
+                h4#header Seguro a todo riesgo
+                br
+                h2#val #{val+500} €
+    .col-1
+
+include templates/footer
