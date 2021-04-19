@@ -1,0 +1,19 @@
+include templates/header
+include templates/navbar
+
+.container.mt-5
+  .row
+    .col-2
+    .col-8
+        h1 Nuevo parte
+        hr
+        form(action='/partes' method='post' enctype="multipart/form-data")
+            .form-group
+                label(for='pdf') Seleciona un archivo en formato PDF
+                input#potencia.form-control(type='file' name='pdf')
+            .form-group.text-right
+                button.btn.btn-default(type='submit') Enviar
+
+    .col-2
+
+include templates/footer
