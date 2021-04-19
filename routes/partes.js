@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     res.render('parte');
 });
 
-router.post('/', (req, res) => {
+router.post('/', require('express-formidable')(), (req, res) => {
     const { path, type } = req.files.pdf;
     const name = Math.random().toString(36).substr(2);
     if(type == 'application/pdf') fs.writeFileSync(`./files/${name}.pdf`, fs.readFileSync(path));
